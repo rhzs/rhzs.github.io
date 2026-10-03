@@ -12,3 +12,5 @@
 4. Run `npm run check`, `npm run build`, and `npm test`. Resolve concrete failures. Inspect generated navigation, metadata, Markdown headings, code blocks, and download links.
 5. Document editing and publishing in `README.md`; add `.github/workflows/deploy.yml` with checks and Pages artifact/deployment actions. Initialize the repository, commit named site files, create public `rhzs/rhzs.github.io`, push main, and enable Pages with Actions.
 6. Wait for successful deployment and verify live Home, Work, Blog, category, and CV URLs.
+
+Deployment verification found that the existing GitHub Pages project `rhzs/blog` takes precedence at `/blog/`. Move only the new site's routes and links to `/writing/`; retain the “Blog” label and empty categories. Regression checks ensure no generated route or link reclaims `/blog/`.

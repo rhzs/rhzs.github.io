@@ -6,5 +6,5 @@ import { categories } from '../../data/profile';
 <Layout title="Blog" description="Rheza Satria’s blog: life, technical notes, and religious reflections.">
   <header class="page-heading"><h1>Room for reflection<span class="heading-dot">.</span></h1><p>A blog about what I build, what I experience, and what I believe.</p></header>
   <BlogListing />
-  <section class="blog-topics" aria-label="About the blog categories">{categories.map((category) => <div><h2><a href={`/blog/${category.id}/`}>{category.name} <span aria-hidden="true">↗</span></a></h2><p>{category.detail}</p></div>)}</section>
+  <section class="blog-topics" aria-label="About the blog categories">{categories.map((category) => <div><h2><a href={`/writing/${category.id}/`}>{category.name} <span aria-hidden="true">↗</span></a></h2><p>{category.detail}</p></div>)}</section>
 </Layout>

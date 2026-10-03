@@ -7,6 +7,7 @@ Build and publish a public personal site at https://rhzs.github.io. Professional
 - Home: introduction, current role, featured professional work, and recent writing.
 - Work: employment history, selected outcomes, technical experience, education, and research publications.
 - Blog: reverse chronological articles with Life, Technical, and Religious category pages.
+- Blog URLs use `/writing/`, because the existing `rhzs/blog` GitHub Pages project reserves `/blog/`. Preserve the old project and use “Blog” as the navigation label for the new site.
 - Articles: Markdown content rendered as static pages when the owner adds posts. No articles are published in the initial version.
 - About: short CV-grounded biography and contact/profile links.
 - CV: a downloadable copy of the provided professional CV.

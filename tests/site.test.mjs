@@ -9,20 +9,26 @@ const readPage = (path) =>
   load(readFileSync(join(output, path, "index.html"), "utf8"));
 
 test("the site publishes the requested portfolio and blog categories", () => {
+  assert.equal(
+    existsSync(join(output, "blog")),
+    false,
+    "The existing GitHub Pages blog owns /blog/",
+  );
   for (const route of [
     "",
     "work",
     "about",
-    "blog",
-    "blog/life",
-    "blog/technical",
-    "blog/religious",
+    "writing",
+    "writing/life",
+    "writing/technical",
+    "writing/religious",
   ]) {
     assert.ok(
       existsSync(join(output, route, "index.html")),
       `Missing page: /${route}`,
     );
     const $ = readPage(route);
+    assert.equal($('a[href^="/blog/"]').length, 0);
     assert.equal($("main").length, 1);
     assert.equal($("h1").length, 1);
     assert.equal(
@@ -90,10 +96,10 @@ test("the CV is available and empty blog categories show a useful empty state", 
   );
   assert.ok(readPage("work").text().includes("Principal Software Engineer"));
   for (const category of ["life", "technical", "religious"]) {
-    const $ = readPage(`blog/${category}`);
+    const $ = readPage(`writing/${category}`);
     if ($(".post-list article").length === 0) {
       assert.ok($.text().includes("No posts published yet"));
-      assert.equal($('a[href^="/blog/posts/"]').length, 0);
+      assert.equal($('a[href^="/writing/posts/"]').length, 0);
     }
   }
 });

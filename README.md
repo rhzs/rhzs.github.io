@@ -13,6 +13,8 @@ npm run dev
 
 Professional details are in `src/data/profile.ts`. Page content is in `src/pages/`; shared styling is in `src/styles/global.css`. The downloadable CV is `public/rheza-satria-cv.pdf`.
 
+The new blog uses `/writing/` because the existing `rhzs/blog` GitHub Pages project owns `/blog/`. The old blog remains untouched.
+
 ## Publish a blog post
 
 The blog starts empty, as requested. Add a Markdown file to `src/content/blog/`, for example `my-first-post.md`:
@@ -29,7 +31,7 @@ draft: false
 Write your post here. Markdown headings, links, images, and fenced code blocks are supported.
 ```
 
-Use `life`, `technical`, or `religious` for the category. The filename becomes the address, e.g. `/blog/posts/my-first-post/`. Set `draft: true` to keep a post unpublished. Posts dated in the future remain unpublished until a build runs on or after their date; GitHub Pages does not automatically rebuild at the publication date.
+Use `life`, `technical`, or `religious` for the category. The filename becomes the address, e.g. `/writing/posts/my-first-post/`. Set `draft: true` to keep a post unpublished. Posts dated in the future remain unpublished until a build runs on or after their date; GitHub Pages does not automatically rebuild at the publication date.
 
 Images can be placed in `public/images/` and linked as `![Description](/images/example.jpg)`.
 

@@ -23,12 +23,12 @@ const posts = await getCollection('blog', ({ data }) => !data.draft && data.date
   </section>
 
   <section class="home-blog" aria-labelledby="blog-heading">
-    <div class="section-heading"><h2 id="blog-heading">Beyond the day job</h2><a class="text-link" href="/blog/">Visit the blog <span aria-hidden="true">↗</span></a></div>
+    <div class="section-heading"><h2 id="blog-heading">Beyond the day job</h2><a class="text-link" href="/writing/">Visit the blog <span aria-hidden="true">↗</span></a></div>
     <p class="section-intro">{posts.length ? 'Thoughts on life, technology, and faith.' : 'Three spaces for writing. The first posts are still to come.'}</p>
     <div class="category-grid">
       {categories.map((category) => {
         const count = posts.filter((post) => post.data.category === category.id).length;
-        return <a class={`category-card ${category.color}`} href={`/blog/${category.id}/`}><span class="category-glyph" aria-hidden="true">{category.id === 'life' ? '◌' : category.id === 'technical' ? '{ }' : '✧'}</span><h3>{category.name}</h3><p>{category.description}</p><span class="category-foot">{count ? `${count} ${count === 1 ? 'post' : 'posts'}` : 'No posts yet'} <span aria-hidden="true">↗</span></span></a>;
+        return <a class={`category-card ${category.color}`} href={`/writing/${category.id}/`}><span class="category-glyph" aria-hidden="true">{category.id === 'life' ? '◌' : category.id === 'technical' ? '{ }' : '✧'}</span><h3>{category.name}</h3><p>{category.description}</p><span class="category-foot">{count ? `${count} ${count === 1 ? 'post' : 'posts'}` : 'No posts yet'} <span aria-hidden="true">↗</span></span></a>;
       })}
     </div>
   </section>
