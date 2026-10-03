@@ -22,6 +22,15 @@ const posts = await getCollection('blog', ({ data }) => !data.draft && data.date
     </div>
   </section>
 
+  <section class="home-work" id="projects" aria-labelledby="projects-heading">
+    <div class="section-heading"><h2 id="projects-heading">Projects</h2><a class="text-link" href={profile.github}>More on GitHub <span aria-hidden="true">↗</span></a></div>
+    <p class="section-intro">Open source work in identity document processing and payment security.</p>
+    <div class="featured-work">
+      <a class="featured-item" href="https://github.com/rhzs/serverless-ktp-ocr"><span class="company-symbol technical" aria-hidden="true">{'{ }'}</span><div><span class="company-period">Google Cloud and OCR</span><h3>Serverless e-KTP OCR</h3><p>An Indonesian identity-card OCR workflow using Cloud Functions, Cloud Storage, Pub/Sub, and Cloud Vision. Adapted from Imre Nagi’s tutorial with ES6 module fixes.</p></div><span class="item-arrow" aria-hidden="true">↗</span></a>
+      <a class="featured-item" href="https://github.com/rhzs/hsm-pin-block"><span class="company-symbol technical" aria-hidden="true">#</span><div><span class="company-period">Node.js and ISO 9564</span><h3>HSM PIN block generator</h3><p>A Node.js library for generating and encrypting ISO 9564 format-0 PIN blocks with a zone PIN key for banking and HSM workflows.</p></div><span class="item-arrow" aria-hidden="true">↗</span></a>
+    </div>
+  </section>
+
   <section class="home-blog" aria-labelledby="blog-heading">
     <div class="section-heading"><h2 id="blog-heading">Beyond the day job</h2><a class="text-link" href="/writing/">Visit the blog <span aria-hidden="true">↗</span></a></div>
     <p class="section-intro">{posts.length ? 'Thoughts on life, technology, and faith.' : 'Three spaces for writing. The first posts are still to come.'}</p>
