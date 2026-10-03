@@ -447,6 +447,19 @@ main:focus {
 .experience-item:first-child {
   border-top: 1px solid var(--line);
 }
+.company-logo {
+  display: block;
+  width: 140px;
+  height: 42px;
+  object-fit: contain;
+  object-position: left center;
+  margin-bottom: 14px;
+}
+#savant-degrees .company-logo {
+  background: var(--ink);
+  border-radius: 6px;
+  padding: 6px;
+}
 .experience-meta h3 {
   margin-top: 9px;
 }
@@ -493,6 +506,12 @@ main:focus {
 }
 .content-section > h2 {
   margin-bottom: 24px;
+}
+.tech-stack-logos {
+  display: block;
+  width: min(100%, 480px);
+  height: auto;
+  margin-bottom: 28px;
 }
 .skill-list {
   display: grid;

@@ -34,6 +34,7 @@ export const categories = [
 export const experience = [
   {
     company: "Grab",
+    logo: "/logos/companies/grab.svg",
     url: "https://www.grab.com",
     period: "Nov 2021 — Present",
     role: "Principal Software Engineer",
@@ -50,6 +51,7 @@ export const experience = [
   },
   {
     company: "PRIXA.AI",
+    logo: "/logos/companies/prixa.png",
     url: "https://prixa.ai",
     period: "Jan 2020 — Nov 2021",
     role: "VP of Engineering",
@@ -65,6 +67,7 @@ export const experience = [
   },
   {
     company: "Bank Rakyat Indonesia",
+    logo: "/logos/companies/bri.svg",
     url: "https://bri.co.id",
     period: "Jan 2018 — Jan 2020",
     role: "Group Head, Future Banking Platform & Digital Experience",
@@ -80,6 +83,7 @@ export const experience = [
   },
   {
     company: "SMBC Bank · Jenius",
+    logo: "/logos/companies/jenius.svg",
     url: "https://jenius.com",
     period: "Dec 2016 — Jan 2018",
     role: "Senior Software Engineer",
@@ -94,6 +98,7 @@ export const experience = [
   },
   {
     company: "HappyFresh",
+    logo: "/logos/companies/happyfresh.svg",
     url: "https://happyfresh.id",
     period: "Sep 2015 — Dec 2016",
     role: "Software Engineer",
@@ -107,6 +112,7 @@ export const experience = [
   },
   {
     company: "Savant Degrees",
+    logo: "/logos/companies/savant-degrees.png",
     url: "https://savantdegrees.com",
     period: "Oct 2013 — Sep 2015",
     role: "Full Stack Software Developer",
@@ -118,6 +124,7 @@ export const experience = [
   },
   {
     company: "Fachhochschule Erfurt",
+    logo: null,
     url: "https://www.fh-erfurt.de/",
     period: "Mar 2011 — Jun 2011",
     role: "Research Assistant",
@@ -129,6 +136,7 @@ export const experience = [
   },
   {
     company: "PT. Vikasa Infinity Anugrah",
+    logo: null,
     url: null,
     period: "Aug 2009 — Dec 2009",
     role: "Software Developer & ERP Business Consultant",
