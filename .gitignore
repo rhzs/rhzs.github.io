@@ -1,0 +1,7 @@
+node_modules/
+dist/
+.astro/
+.DS_Store
+.env
+CV-RhezaSatria-Sep-2026.pdf
+.tool-versions

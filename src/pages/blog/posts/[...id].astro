@@ -1,0 +1,14 @@
+---
+import { getCollection, render } from 'astro:content';
+import Layout from '../../../layouts/Layout.astro';
+import { categories } from '../../../data/profile';
+export async function getStaticPaths() {
+  return (await getCollection('blog', ({ data }) => !data.draft && data.date <= new Date())).map((post) => ({ params: { id: post.id }, props: { post } }));
+}
+const { post } = Astro.props;
+const { Content } = await render(post);
+const category = categories.find((item) => item.id === post.data.category)!;
+---
+<Layout title={post.data.title} description={post.data.description}>
+  <article class="blog-article"><header class="page-heading"><a class="text-link back-link" href={`/blog/${category.id}/`}>← {category.name} writing</a><div class="post-meta"><span>{category.name}</span><time datetime={post.data.date.toISOString()}>{post.data.date.toLocaleDateString('en-GB', { dateStyle: 'long', timeZone: 'UTC' })}</time></div><h1>{post.data.title}</h1><p>{post.data.description}</p></header><div class="prose"><Content /></div></article>
+</Layout>

@@ -1,0 +1,61 @@
+---
+import '../styles/global.css';
+import { profile } from '../data/profile';
+
+interface Props { title?: string; description?: string; }
+const { title, description = 'Rheza Satria — Principal Software Engineer. Professional work and writing on life, technology, and religion.' } = Astro.props;
+const pageTitle = title ? `${title} · ${profile.name}` : `${profile.name} · Engineer & writer`;
+const path = Astro.url.pathname;
+const navigation = [
+  { label: 'Home', href: '/' },
+  { label: 'Work', href: '/work/' },
+  { label: 'Blog', href: '/blog/' },
+  { label: 'About', href: '/about/' },
+];
+---
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#f8f9fc" />
+    <meta name="description" content={description} />
+    <title>{pageTitle}</title>
+    <link rel="canonical" href={new URL(path, Astro.site)} />
+    <link rel="icon" href="/favicon.png" type="image/png" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content={pageTitle} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content={new URL(path, Astro.site)} />
+    <meta name="twitter:card" content="summary" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Newsreader:opsz,wght@6..72,400;6..72,500&family=Source+Sans+3:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  </head>
+  <body>
+    <a class="skip-link" href="#main-content">Skip to content</a>
+    <div class="site-shell">
+      <header class="sidebar">
+        <a class="identity" href="/" aria-label="Rheza Satria home">
+          <span class="monogram" aria-hidden="true">rs<span>.</span></span>
+          <span class="identity-text"><strong>Rheza Satria</strong><span>Engineer & writer</span></span>
+        </a>
+        <nav aria-label="Main navigation">
+          {navigation.map(({ label, href }) => (
+            <a href={href} aria-current={(href === '/' ? path === href : path.startsWith(href)) ? 'page' : undefined}>
+              <span>{label}</span><span class="nav-mark" aria-hidden="true">•</span>
+            </a>
+          ))}
+        </nav>
+        <div class="sidebar-bottom">
+          <p>Building software.<br />Making room for reflection.</p>
+          <div class="social-links"><a href={profile.github}>GitHub</a><a href={`mailto:${profile.email}`}>Email</a></div>
+        </div>
+      </header>
+      <div class="page-shell">
+        <main id="main-content" tabindex="-1"><slot /></main>
+        <footer class="site-footer"><span>© {new Date().getFullYear()} Rheza Satria</span><span>Work, life, and everything I’m learning.</span></footer>
+      </div>
+    </div>
+  </body>
+</html>

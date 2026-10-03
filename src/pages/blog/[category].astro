@@ -1,0 +1,11 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import BlogListing from '../../components/BlogListing.astro';
+import { categories } from '../../data/profile';
+export function getStaticPaths() { return categories.map((category) => ({ params: { category: category.id }, props: { category } })); }
+const { category } = Astro.props;
+---
+<Layout title={`${category.name} blog`} description={category.detail}>
+  <header class="page-heading"><h1>{category.name}<span class="heading-dot">.</span></h1><p>{category.detail}</p></header>
+  <BlogListing category={category.id} />
+</Layout>

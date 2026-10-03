@@ -1,0 +1,14 @@
+---
+import Layout from '../layouts/Layout.astro';
+import { experience, skills, education } from '../data/profile';
+const slug = (name: string) => name.toLowerCase().replace(/[^a-z0-9\s-]/g, '').replace(/\s+/g, '-');
+---
+<Layout title="Professional work" description="Rheza Satria’s work in payments, healthcare, digital banking, cloud platforms, and engineering leadership.">
+  <header class="page-heading"><h1>Professional work<span class="heading-dot">.</span></h1><p>Building systems that serve people, and teams that can keep improving them.</p><a class="button secondary" href="/rheza-satria-cv.pdf" download>Download my CV <span aria-hidden="true">↓</span></a></header>
+  <section aria-labelledby="experience-heading"><div class="section-heading"><h2 id="experience-heading">Experience</h2><span class="quiet">From the latest chapter</span></div>
+    <div class="experience-list">{experience.map((job) => <article class="experience-item" id={slug(job.company)}><div class="experience-meta"><span class="company-period">{job.period}</span><h3>{job.url ? <a href={job.url}>{job.company}</a> : job.company}</h3></div><div class="experience-body"><h4>{job.role}</h4><p class="team-label">{job.team}</p><p>{job.description}</p>{job.highlights.length > 0 && <ul>{job.highlights.map((highlight) => <li>{highlight}</li>)}</ul>}<ul class="tags" aria-label="Areas of work">{job.tags.map((tag) => <li>{tag}</li>)}</ul></div></article>)}</div>
+  </section>
+  <section class="content-section" aria-labelledby="skills-heading"><h2 id="skills-heading">Tools of the trade</h2><div class="skill-list">{skills.map((skill) => <div><h3>{skill.name}</h3><p>{skill.items}</p></div>)}</div></section>
+  <section class="content-section" aria-labelledby="education-heading"><h2 id="education-heading">Education</h2><div class="education-list">{education.map((item) => <article><span class="company-period">{item.year}</span><div><h3>{item.school}</h3><p>{item.qualification}<br /><span class="quiet">{item.location}</span></p></div></article>)}</div></section>
+  <section class="content-section research" aria-labelledby="research-heading"><h2 id="research-heading">Research publications</h2><article><span class="company-period">2012</span><h3>Comparison of Anchor Selection Algorithm for Improvement of Position Estimation during the Wi-Fi Localization Process in Disaster Scenario</h3><p>Co-authored with Oleksandr Artemenko, Tobias Simon, Andreas Mitschele-Thiel, and Dominik Schulz. Published through EDAS, April 2012.</p></article><article><span class="company-period">2012</span><h3>Localization in Wireless Networks: Improvement of Location Estimation Results</h3><p>Co-authored with Oleksandr Artmenko, Gunar Schorcht, and Andreas Mitschele-Thiel. MIET 2012, Odessa, Ukraine.</p></article></section>
+</Layout>
