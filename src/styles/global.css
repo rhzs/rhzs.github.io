@@ -243,15 +243,6 @@ main:focus {
 .button.primary:hover {
   background: #4e3e8d;
 }
-.button.secondary {
-  border: 1px solid var(--line);
-  background: white;
-  color: var(--ink);
-}
-.button.secondary:hover {
-  border-color: var(--accent);
-  color: var(--accent);
-}
 .text-link {
   display: inline-flex;
   align-items: center;

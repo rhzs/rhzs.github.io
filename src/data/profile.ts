@@ -40,12 +40,11 @@ export const experience = [
     role: "Principal Software Engineer",
     team: "Payments Tech Family",
     description:
-      "Payment acceptance, platform architecture, and engineering operations across the Grab and OVO ecosystem.",
+      "Building reliable payment platforms across Grab and OVO.",
     highlights: [
-      "Consolidated enterprise payment gateways across 12+ business verticals, unlocking US$150M in annual GMV and reducing infrastructure costs by 68%.",
-      "Migrated 42+ critical financial services to Google Kubernetes Engine and established GitOps delivery controls, reducing release cycles by 95%.",
-      "Led a tier-1 payment gateway migration handling approximately 15 million daily transactions at 99.9% availability, with approximately 30% lower costs.",
-      "Established engineering AI adoption standards and built incident-triage agents that reduced response time from 2–3 hours to 10–15 minutes.",
+      "Lead payment platform architecture and integrations.",
+      "Improve reliability, cloud infrastructure, and release workflows.",
+      "Build AI tools for engineering and incident response.",
     ],
     tags: ["Go", "Payments", "GKE", "GitOps", "AI-assisted engineering"],
   },

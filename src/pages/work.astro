@@ -4,7 +4,7 @@ import { experience, skills, education } from '../data/profile';
 const slug = (name: string) => name.toLowerCase().replace(/[^a-z0-9\s-]/g, '').replace(/\s+/g, '-');
 ---
 <Layout title="Professional work" description="Rheza Satria’s work in payments, healthcare, digital banking, cloud platforms, and engineering leadership.">
-  <header class="page-heading"><h1>Professional work<span class="heading-dot">.</span></h1><p>Building systems that serve people, and teams that can keep improving them.</p><a class="button secondary" href="/rheza-satria-cv.pdf" download>Download my CV <span aria-hidden="true">↓</span></a></header>
+  <header class="page-heading"><h1>Professional work<span class="heading-dot">.</span></h1><p>Building systems that serve people, and teams that can keep improving them.</p></header>
   <section aria-labelledby="experience-heading"><div class="section-heading"><h2 id="experience-heading">Experience</h2><span class="quiet">From the latest chapter</span></div>
     <div class="experience-list">{experience.map((job) => <article class="experience-item" id={slug(job.company)}><div class="experience-meta">{job.logo && <img class="company-logo" src={job.logo} alt={`${job.company} logo`} width="140" height="42" loading="lazy" decoding="async" />}<span class="company-period">{job.period}</span><h3>{job.url ? <a href={job.url}>{job.company}</a> : job.company}</h3></div><div class="experience-body"><h4>{job.role}</h4><p class="team-label">{job.team}</p><p>{job.description}</p>{job.highlights.length > 0 && <ul>{job.highlights.map((highlight) => <li>{highlight}</li>)}</ul>}<ul class="tags" aria-label="Areas of work">{job.tags.map((tag) => <li>{tag}</li>)}</ul></div></article>)}</div>
   </section>
